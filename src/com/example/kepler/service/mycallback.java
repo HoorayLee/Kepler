@@ -27,7 +27,7 @@ public class mycallback implements Callback{
 			// TODO Auto-generated method stub
 			Bundle bundle = arg0.getData();
 			LBSInfo lbs = null;
-			try {	
+			try {
 				lbs = new LBSInfo();
 				if("record".equalsIgnoreCase((String) bundle.get("type"))){
 					JSONObject jrecord = new JSONObject((String)bundle.get("record"));

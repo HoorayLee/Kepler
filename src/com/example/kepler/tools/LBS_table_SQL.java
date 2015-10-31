@@ -85,11 +85,10 @@ static String username;
 			while(cursor.moveToNext()){
 				LBSInfo lbs = new LBSInfo();
 				lbs.lbsid = cursor.getString(0);
-				lbs.userid = cursor.getString(1);
-				lbs.lat = cursor.getDouble(2);
-				lbs.lng = cursor.getDouble(3);
+				lbs.lat = cursor.getDouble(1);
+				lbs.lng = cursor.getDouble(2);
+				lbs.date = cursor.getString(3);
 				lbs.accuracy = cursor.getDouble(4);
-				lbs.date = cursor.getString(5);
 				lbss.add(lbs);
 			}
 			cursor.close();

@@ -31,6 +31,7 @@ public class gaode implements AMapLocationListener{
 	LatLonPoint point;
 	double Accuracy;
 	String username = null;
+	int time = 10000;
 	int scantime = 10000;
 	int fanwei = 50;
 	Context context = null;
@@ -49,8 +50,8 @@ public class gaode implements AMapLocationListener{
 	{
 		this.context = activity;
 		this.callback = callback;
-//		StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//		StrictMode.setThreadPolicy(policy);
+		StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy);
 		init();
 	}
 
@@ -93,7 +94,7 @@ public class gaode implements AMapLocationListener{
 				job.put("accuracy", String.valueOf(Accuracy));
 				Date now=new Date();
 				String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(now);
-				//getpoi.start(date, new LatLonPoint(geoLat, geoLng), context, callback);
+				getpoi.start(date, new LatLonPoint(geoLat, geoLng), context, callback);
 				job.put("lbsid", date);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
